@@ -1,0 +1,36 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Login Suite">
+
+    <test name="Smoke Test">
+
+        <parameter name="username" value="tomsmith"/>
+        <parameter name="password" value="SuperSecretPassword!"/>
+
+        <groups>
+            <run>
+                <include name="smoke"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="examples.SimpleLoginTest2"/>
+        </classes>
+    </test>
+
+    <test name="Regression Test">
+
+        <parameter name="username" value="wronguser"/>
+        <parameter name="password" value="wrongpass"/>
+
+        <groups>
+            <run>
+                <include name="regression"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="examples.SimpleLoginTest2"/>
+        </classes>
+    </test>
+
+</suite>
